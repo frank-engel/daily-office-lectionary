@@ -1,0 +1,733 @@
+[
+  {
+    "week": "All Saints Day",
+    "title": "All Saints Day",
+    "lessons": {
+      "first": "Dan 7:1-3, 15-18",
+      "psalm": "149",
+      "second": "Eph 1:11-23",
+      "gospel": "Luke 6:20-31"
+    }
+  },
+  {
+    "week": "Baptism of the Lord",
+    "title": "Baptism of the Lord",
+    "lessons": {
+      "first": "Isa 43:1-7",
+      "psalm": "29",
+      "second": "Acts 8:14-17",
+      "gospel": "Luke 3:15-17, 21-22"
+    }
+  },
+  {
+    "week": "Canadian Thanksgiving Day",
+    "title": "Canadian Thanksgiving Day",
+    "lessons": {
+      "first": "Deut 26:1-11",
+      "psalm": "100",
+      "second": "Phil 4:4-9",
+      "gospel": "John 6:25-35"
+    }
+  },
+  {
+    "week": "Day of Pentecost",
+    "title": "Day of Pentecost",
+    "lessons": {
+      "first": "Acts 2:1-21 or Gen 11:1-9",
+      "psalm": "104:24-34, 35b",
+      "second": "Rom 8:14-17 or Acts 2:1-21",
+      "gospel": "John 14:8-17, (25-27)"
+    }
+  },
+  {
+    "week": "Easter Day",
+    "title": "Resurrection of the Lord",
+    "lessons": {
+      "first": "Acts 10:34-43 or Isa 65:17-25",
+      "psalm": "118:1-2, 14-24",
+      "second": "1 Cor 15:19-26 or Acts 10:34-43",
+      "gospel": "John 20:1-18 or Luke 24:1-12",
+      "evening": {
+        "first": "Isa 25:6-9",
+        "psalm": "114",
+        "second": "1 Cor 5:6b-8",
+        "gospel": "Luke 24:13-49"
+      }
+    }
+  },
+  {
+    "week": "Fifth Sunday after the Epiphany",
+    "title": "Fifth Sunday after the Epiphany",
+    "lessons": {
+      "first": "Isa 6:1-8, (9-13)",
+      "psalm": "138",
+      "second": "1 Cor 15:1-11",
+      "gospel": "Luke 5:1-11"
+    }
+  },
+  {
+    "week": "Fifth Sunday in Lent",
+    "title": "Fifth Sunday in Lent",
+    "lessons": {
+      "first": "Isa 43:16-21",
+      "psalm": "126",
+      "second": "Phil 3:4b-14",
+      "gospel": "John 12:1-8"
+    }
+  },
+  {
+    "week": "Fifth Sunday of Easter",
+    "title": "Fifth Sunday of Easter",
+    "lessons": {
+      "first": "Acts 11:1-18",
+      "psalm": "148",
+      "second": "Rev 21:1-6",
+      "gospel": "John 13:31-35"
+    }
+  },
+  {
+    "week": "First Sunday after Christmas Day",
+    "title": "First Sunday after Christmas Day",
+    "lessons": {
+      "first": "1 Sam 2:18-20, 26",
+      "psalm": "148",
+      "second": "Col 3:12-17",
+      "gospel": "Luke 2:41-52"
+    }
+  },
+  {
+    "week": "First Sunday in Lent",
+    "title": "First Sunday in Lent",
+    "lessons": {
+      "first": "Deut 26:1-11",
+      "psalm": "91:1-2, 9-16",
+      "second": "Rom 10:8b-13",
+      "gospel": "Luke 4:1-13"
+    }
+  },
+  {
+    "week": "First Sunday of Advent",
+    "title": "First Sunday of Advent",
+    "lessons": {
+      "first": "Jer 33:14-16",
+      "psalm": "25:1-10",
+      "second": "1 Thess 3:9-13",
+      "gospel": "Luke 21:25-36"
+    }
+  },
+  {
+    "week": "Fourth Sunday after the Epiphany",
+    "title": "Fourth Sunday after the Epiphany",
+    "lessons": {
+      "first": "Jer 1:4-10",
+      "psalm": "71:1-6",
+      "second": "1 Cor 13:1-13",
+      "gospel": "Luke 4:21-30"
+    }
+  },
+  {
+    "week": "Fourth Sunday in Lent",
+    "title": "Fourth Sunday in Lent",
+    "lessons": {
+      "first": "Josh 5:9-12",
+      "psalm": "32",
+      "second": "2 Cor 5:16-21",
+      "gospel": "Luke 15:1-3, 11b-32"
+    }
+  },
+  {
+    "week": "Fourth Sunday of Advent",
+    "title": "Fourth Sunday of Advent",
+    "lessons": {
+      "first": "Mic 5:2-5a",
+      "psalm": "Luke 1:46b-55 or Psalm 80:1-7",
+      "second": "Heb 10:5-10",
+      "gospel": "Luke 1:39-45, (46-55)"
+    }
+  },
+  {
+    "week": "Fourth Sunday of Easter",
+    "title": "Fourth Sunday of Easter",
+    "lessons": {
+      "first": "Acts 9:36-43",
+      "psalm": "23",
+      "second": "Rev 7:9-17",
+      "gospel": "John 10:22-30"
+    }
+  },
+  {
+    "week": "Holy Saturday",
+    "title": "Holy Saturday",
+    "lessons": {
+      "first": "Job 14:1-14 or Lam 3:1-9, 19-24",
+      "psalm": "31:1-4, 15-16",
+      "second": "1 Pet 4:1-8",
+      "gospel": "Matt 27:57-66 or John 19:38-42",
+      "vigil": {
+        "second": "Rom 6:3-11",
+        "psalm": "114",
+        "gospel": "Luke 24:1-12"
+      }
+    }
+  },
+  {
+    "week": "Palm Sunday",
+    "title": "Palm Sunday",
+    "lessons": {
+      "palms": {
+        "gospel": "Luke 19:28-40",
+        "psalm": "118:1-2, 19-29"
+      },
+      "passion": {
+        "first": "Isa 50:4-9a",
+        "psalm": "31:9-16",
+        "second": "Phil 2:5-11",
+        "gospel": "Luke 22:14-23:56 or Luke 23:1-49"
+      }
+    }
+  },
+  {
+    "week": "Proper 10",
+    "title": "Proper 10 (15)",
+    "lessons": {
+      "track1": {
+        "first": "Amos 7:7-17",
+        "psalm": "82"
+      },
+      "track2": {
+        "first": "Deut 30:9-14",
+        "psalm": "25:1-10"
+      },
+      "second": "Col 1:1-14",
+      "gospel": "Luke 10:25-37"
+    }
+  },
+  {
+    "week": "Proper 11",
+    "title": "Proper 11 (16)",
+    "lessons": {
+      "track1": {
+        "first": "Amos 8:1-12",
+        "psalm": "52"
+      },
+      "track2": {
+        "first": "Gen 18:1-10a",
+        "psalm": "15"
+      },
+      "second": "Col 1:15-28",
+      "gospel": "Luke 10:38-42"
+    }
+  },
+  {
+    "week": "Proper 12",
+    "title": "Proper 12 (17)",
+    "lessons": {
+      "track1": {
+        "first": "Hos 1:2-10",
+        "psalm": "85"
+      },
+      "track2": {
+        "first": "Gen 18:20-32",
+        "psalm": "138"
+      },
+      "second": "Col 2:6-15, (16-19)",
+      "gospel": "Luke 11:1-13"
+    }
+  },
+  {
+    "week": "Proper 13",
+    "title": "Proper 13 (18)",
+    "lessons": {
+      "track1": {
+        "first": "Hos 11:1-11",
+        "psalm": "107:1-9, 43"
+      },
+      "track2": {
+        "first": "Eccl 1:2, 12-14; 2:18-23",
+        "psalm": "49:1-12"
+      },
+      "second": "Col 3:1-11",
+      "gospel": "Luke 12:13-21"
+    }
+  },
+  {
+    "week": "Proper 14",
+    "title": "Proper 14 (19)",
+    "lessons": {
+      "track1": {
+        "first": "Isa 1:1, 10-20",
+        "psalm": "50:1-8, 22-23"
+      },
+      "track2": {
+        "first": "Gen 15:1-6",
+        "psalm": "33:12-22"
+      },
+      "second": "Heb 11:1-3, 8-16",
+      "gospel": "Luke 12:32-40"
+    }
+  },
+  {
+    "week": "Proper 15",
+    "title": "Proper 15 (20)",
+    "lessons": {
+      "track1": {
+        "first": "Isa 5:1-7",
+        "psalm": "80:1-2, 8-19"
+      },
+      "track2": {
+        "first": "Jer 23:23-29",
+        "psalm": "82"
+      },
+      "second": "Heb 11:29-12:2",
+      "gospel": "Luke 12:49-56"
+    }
+  },
+  {
+    "week": "Proper 16",
+    "title": "Proper 16 (21)",
+    "lessons": {
+      "track1": {
+        "first": "Jer 1:4-10",
+        "psalm": "71:1-6"
+      },
+      "track2": {
+        "first": "Isa 58:9b-14",
+        "psalm": "103:1-8"
+      },
+      "second": "Heb 12:18-29",
+      "gospel": "Luke 13:10-17"
+    }
+  },
+  {
+    "week": "Proper 17",
+    "title": "Proper 17 (22)",
+    "lessons": {
+      "track1": {
+        "first": "Jer 2:4-13",
+        "psalm": "81:1, 10-16"
+      },
+      "track2": {
+        "first": "Sir 10:12-18 or Prov 25:6-7",
+        "psalm": "112"
+      },
+      "second": "Heb 13:1-8, 15-16",
+      "gospel": "Luke 14:1, 7-14"
+    }
+  },
+  {
+    "week": "Proper 18",
+    "title": "Proper 18 (23)",
+    "lessons": {
+      "track1": {
+        "first": "Jer 18:1-11",
+        "psalm": "139:1-6, 13-18"
+      },
+      "track2": {
+        "first": "Deut 30:15-20",
+        "psalm": "1"
+      },
+      "second": "Phlm 1:1-21",
+      "gospel": "Luke 14:25-33"
+    }
+  },
+  {
+    "week": "Proper 19",
+    "title": "Proper 19 (24)",
+    "lessons": {
+      "track1": {
+        "first": "Jer 4:11-12, 22-28",
+        "psalm": "14"
+      },
+      "track2": {
+        "first": "Exod 32:7-14",
+        "psalm": "51:1-10"
+      },
+      "second": "1 Tim 1:12-17",
+      "gospel": "Luke 15:1-10"
+    }
+  },
+  {
+    "week": "Proper 20",
+    "title": "Proper 20 (25)",
+    "lessons": {
+      "track1": {
+        "first": "Jer 8:18-9:1",
+        "psalm": "79:1-9"
+      },
+      "track2": {
+        "first": "Amos 8:4-7",
+        "psalm": "113"
+      },
+      "second": "1 Tim 2:1-7",
+      "gospel": "Luke 16:1-13"
+    }
+  },
+  {
+    "week": "Proper 21",
+    "title": "Proper 21 (26)",
+    "lessons": {
+      "track1": {
+        "first": "Jer 32:1-3a, 6-15",
+        "psalm": "91:1-6, 14-16"
+      },
+      "track2": {
+        "first": "Amos 6:1a, 4-7",
+        "psalm": "146"
+      },
+      "second": "1 Tim 6:6-19",
+      "gospel": "Luke 16:19-31"
+    }
+  },
+  {
+    "week": "Proper 22",
+    "title": "Proper 22 (27)",
+    "lessons": {
+      "track1": {
+        "first": "Lam 1:1-6 Lam 3:19-26 or",
+        "psalm": "137"
+      },
+      "track2": {
+        "first": "Hab 1:1-4; 2:1-4",
+        "psalm": "37:1-9"
+      },
+      "second": "2 Tim 1:1-14",
+      "gospel": "Luke 17:5-10"
+    }
+  },
+  {
+    "week": "Proper 23",
+    "title": "Proper 23 (28)",
+    "lessons": {
+      "track1": {
+        "first": "Jer 29:1, 4-7",
+        "psalm": "66:1-12"
+      },
+      "track2": {
+        "first": "2 Kgs 5:1-3, 7-15c",
+        "psalm": "111"
+      },
+      "second": "2 Tim 2:8-15",
+      "gospel": "Luke 17:11-19"
+    }
+  },
+  {
+    "week": "Proper 24",
+    "title": "Proper 24 (29)",
+    "lessons": {
+      "track1": {
+        "first": "Jer 31:27-34",
+        "psalm": "119:97-104"
+      },
+      "track2": {
+        "first": "Gen 32:22-31",
+        "psalm": "121"
+      },
+      "second": "2 Tim 3:14-4:5",
+      "gospel": "Luke 18:1-8"
+    }
+  },
+  {
+    "week": "Proper 25",
+    "title": "Proper 25 (30)",
+    "lessons": {
+      "track1": {
+        "first": "Joel 2:23-32",
+        "psalm": "65"
+      },
+      "track2": {
+        "first": "Sir 35:12-17 or Jer 14:7-10, 19-22",
+        "psalm": "84:1-7"
+      },
+      "second": "2 Tim 4:6-8, 16-18",
+      "gospel": "Luke 18:9-14"
+    }
+  },
+  {
+    "week": "Proper 26",
+    "title": "Proper 26 (31)",
+    "lessons": {
+      "track1": {
+        "first": "Hab 1:1-4; 2:1-4",
+        "psalm": "119:137-144"
+      },
+      "track2": {
+        "first": "Isa 1:10-18",
+        "psalm": "32:1-7"
+      },
+      "second": "2 Thess 1:1-4, 11-12",
+      "gospel": "Luke 19:1-10"
+    }
+  },
+  {
+    "week": "Proper 27",
+    "title": "Proper 27 (32)",
+    "lessons": {
+      "track1": {
+        "first": "Hag 1:15b-2:9",
+        "psalm": "145:1-5, 17-21 or Psalm 98"
+      },
+      "track2": {
+        "first": "Job 19:23-27a",
+        "psalm": "17:1-9"
+      },
+      "second": "2 Thess 2:1-5, 13-17",
+      "gospel": "Luke 20:27-38"
+    }
+  },
+  {
+    "week": "Proper 28",
+    "title": "Proper 28 (33)",
+    "lessons": {
+      "track1": {
+        "first": "Isa 65:17-25",
+        "psalm": "Isa 12"
+      },
+      "track2": {
+        "first": "Mal 4:1-2a",
+        "psalm": "98"
+      },
+      "second": "2 Thess 3:6-13",
+      "gospel": "Luke 21:5-19"
+    }
+  },
+  {
+    "week": "Proper 29",
+    "title": "Reign of Christ",
+    "lessons": {
+      "track1": {
+        "first": "Jer 23:1-6",
+        "psalm": "Luke 1:68-79"
+      },
+      "track2": {
+        "first": "Jer 23:1-6",
+        "psalm": "46"
+      },
+      "second": "Col 1:11-20",
+      "gospel": "Luke 23:33-43"
+    }
+  },
+  {
+    "week": "Proper 6",
+    "title": "Proper 6 (11)",
+    "lessons": {
+      "track1": {
+        "first": "1 Kgs 21:1-10, (11-14), 15-21a",
+        "psalm": "5:1-8"
+      },
+      "track2": {
+        "first": "2 Sam 11:26-12:10, 13-15",
+        "psalm": "32"
+      },
+      "second": "Gal 2:15-21",
+      "gospel": "Luke 7:36-8:3"
+    }
+  },
+  {
+    "week": "Proper 7",
+    "title": "Proper 7 (12)",
+    "lessons": {
+      "track1": {
+        "first": "1 Kgs 19:1-4, (5-7), 8-15a",
+        "psalm": "42 and 43"
+      },
+      "track2": {
+        "first": "Isa 65:1-9",
+        "psalm": "22:19-28"
+      },
+      "second": "Gal 3:23-29",
+      "gospel": "Luke 8:26-39"
+    }
+  },
+  {
+    "week": "Proper 8",
+    "title": "Proper 8 (13)",
+    "lessons": {
+      "track1": {
+        "first": "2 Kgs 2:1-2, 6-14",
+        "psalm": "77:1-2, 11-20"
+      },
+      "track2": {
+        "first": "1 Kgs 19:15-16, 19-21",
+        "psalm": "16"
+      },
+      "second": "Gal 5:1, 13-25",
+      "gospel": "Luke 9:51-62"
+    }
+  },
+  {
+    "week": "Proper 9",
+    "title": "Proper 9 (14)",
+    "lessons": {
+      "track1": {
+        "first": "2 Kgs 5:1-14",
+        "psalm": "30"
+      },
+      "track2": {
+        "first": "Isa 66:10-14",
+        "psalm": "66:1-9"
+      },
+      "second": "Gal 6:(1-6), 7-16",
+      "gospel": "Luke 10:1-11, 16-20"
+    }
+  },
+  {
+    "week": "Second Sunday after Christmas Day",
+    "title": "Second Sunday after Christmas Day",
+    "lessons": {
+      "first": "Jer 31:7-14 or Sir 24:1-12",
+      "psalm": "147:12-20 or Wis 10:15-21",
+      "second": "Eph 1:3-14",
+      "gospel": "John 1:(1-9), 10-18"
+    }
+  },
+  {
+    "week": "Second Sunday after the Epiphany",
+    "title": "Second Sunday after the Epiphany",
+    "lessons": {
+      "first": "Isa 62:1-5",
+      "psalm": "36:5-10",
+      "second": "1 Cor 12:1-11",
+      "gospel": "John 2:1-11"
+    }
+  },
+  {
+    "week": "Second Sunday in Lent",
+    "title": "Second Sunday in Lent",
+    "lessons": {
+      "first": "Gen 15:1-12, 17-18",
+      "psalm": "27",
+      "second": "Phil 3:17-4:1",
+      "gospel": "Luke 13:31-35 or Luke 9:28-36, (37-43a)"
+    }
+  },
+  {
+    "week": "Second Sunday of Advent",
+    "title": "Second Sunday of Advent",
+    "lessons": {
+      "first": "Bar 5:1-9 or Mal 3:1-4",
+      "psalm": "Luke 1:68-79",
+      "second": "Phil 1:3-11",
+      "gospel": "Luke 3:1-6"
+    }
+  },
+  {
+    "week": "Second Sunday of Easter",
+    "title": "Second Sunday of Easter",
+    "lessons": {
+      "first": "Acts 5:27-32",
+      "psalm": "118:14-29 or Psalm 150",
+      "second": "Rev 1:4-8",
+      "gospel": "John 20:19-31"
+    }
+  },
+  {
+    "week": "Seventh Sunday after the Epiphany",
+    "title": "Seventh Sunday after the Epiphany",
+    "lessons": {
+      "first": "Gen 45:3-11, 15",
+      "psalm": "37:1-11, 39-40",
+      "second": "1 Cor 15:35-38, 42-50",
+      "gospel": "Luke 6:27-38"
+    }
+  },
+  {
+    "week": "Seventh Sunday of Easter",
+    "title": "Seventh Sunday of Easter",
+    "lessons": {
+      "first": "Acts 16:16-34",
+      "psalm": "97",
+      "second": "Rev 22:12-14, 16-17, 20-21",
+      "gospel": "John 17:20-26"
+    }
+  },
+  {
+    "week": "Sixth Sunday after the Epiphany",
+    "title": "Sixth Sunday after the Epiphany",
+    "lessons": {
+      "first": "Jer 17:5-10",
+      "psalm": "1",
+      "second": "1 Cor 15:12-20",
+      "gospel": "Luke 6:17-26"
+    }
+  },
+  {
+    "week": "Sixth Sunday of Easter",
+    "title": "Sixth Sunday of Easter",
+    "lessons": {
+      "first": "Acts 16:9-15",
+      "psalm": "67",
+      "second": "Rev 21:10, 22-22:5",
+      "gospel": "John 14:23-29 or John 5:1-9"
+    }
+  },
+  {
+    "week": "Thanksgiving Day",
+    "title": "Thanksgiving Day",
+    "lessons": {
+      "first": "Deut 26:1-11",
+      "psalm": "100",
+      "second": "Phil 4:4-9",
+      "gospel": "John 6:25-35"
+    }
+  },
+  {
+    "week": "Third Sunday after the Epiphany",
+    "title": "Third Sunday after the Epiphany",
+    "lessons": {
+      "first": "Neh 8:1-3, 5-6, 8-10",
+      "psalm": "19",
+      "second": "1 Cor 12:12-31a",
+      "gospel": "Luke 4:14-21"
+    }
+  },
+  {
+    "week": "Third Sunday in Lent",
+    "title": "Third Sunday in Lent",
+    "lessons": {
+      "first": "Isa 55:1-9",
+      "psalm": "63:1-8",
+      "second": "1 Cor 10:1-13",
+      "gospel": "Luke 13:1-9"
+    }
+  },
+  {
+    "week": "Third Sunday of Advent",
+    "title": "Third Sunday of Advent",
+    "lessons": {
+      "first": "Zeph 3:14-20",
+      "psalm": "Isa 12:2-6",
+      "second": "Phil 4:4-7",
+      "gospel": "Luke 3:7-18"
+    }
+  },
+  {
+    "week": "Third Sunday of Easter",
+    "title": "Third Sunday of Easter",
+    "lessons": {
+      "first": "Acts 9:1-6, (7-20)",
+      "psalm": "30",
+      "second": "Rev 5:11-14",
+      "gospel": "John 21:1-19"
+    }
+  },
+  {
+    "week": "Transfiguration Sunday",
+    "title": "Transfiguration Sunday",
+    "lessons": {
+      "first": "Exod 34:29-35",
+      "psalm": "99",
+      "second": "2 Cor 3:12-4:2",
+      "gospel": "Luke 9:28-36, (37-43a)"
+    }
+  },
+  {
+    "week": "Trinity Sunday",
+    "title": "Trinity Sunday",
+    "lessons": {
+      "first": "Prov 8:1-4, 22-31",
+      "psalm": "8",
+      "second": "Rom 5:1-5",
+      "gospel": "John 16:12-15"
+    }
+  }
+]

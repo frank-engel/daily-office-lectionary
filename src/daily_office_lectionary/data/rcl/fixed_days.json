@@ -1,0 +1,152 @@
+[
+  {
+    "week": "Annunciation of the Lord",
+    "title": "Annunciation of the Lord",
+    "lessons": {
+      "first": "Isa 7:10-14",
+      "psalm": "45 or Psalm 40:5-10",
+      "second": "Heb 10:4-10",
+      "gospel": "Luke 1:26-38"
+    }
+  },
+  {
+    "week": "Ascension Day",
+    "title": "Ascension of the Lord",
+    "lessons": {
+      "first": "Acts 1:1-11",
+      "psalm": "47 or Psalm 93",
+      "second": "Eph 1:15-23",
+      "gospel": "Luke 24:44-53"
+    }
+  },
+  {
+    "week": "Ash Wednesday",
+    "title": "Ash Wednesday",
+    "lessons": {
+      "first": "Joel 2:1-2, 12-17 or Isa 58:1-12",
+      "psalm": "51:1-17",
+      "second": "2 Cor 5:20b-6:10",
+      "gospel": "Matt 6:1-6, 16-21"
+    }
+  },
+  {
+    "week": "Christmas Day",
+    "title": "Nativity of the Lord - Proper III",
+    "lessons": {
+      "first": "Isa 52:7-10",
+      "psalm": "98",
+      "second": "Heb 1:1-4, (5-12)",
+      "gospel": "John 1:1-14"
+    }
+  },
+  {
+    "week": "Christmas Eve",
+    "title": "Nativity of the Lord - Proper I",
+    "lessons": {
+      "first": "Isa 9:2-7",
+      "psalm": "96",
+      "second": "Titus 2:11-14",
+      "gospel": "Luke 2:1-14, (15-20)"
+    }
+  },
+  {
+    "week": "Epiphany of the Lord",
+    "title": "Epiphany of the Lord",
+    "lessons": {
+      "first": "Isa 60:1-6",
+      "psalm": "72:1-7, 10-14",
+      "second": "Eph 3:1-12",
+      "gospel": "Matt 2:1-12"
+    }
+  },
+  {
+    "week": "Good Friday",
+    "title": "Good Friday",
+    "lessons": {
+      "first": "Isa 52:13-53:12",
+      "psalm": "22",
+      "second": "Heb 10:16-25 or Heb 4:14-16; 5:7-9",
+      "gospel": "John 18:1-19:42"
+    }
+  },
+  {
+    "week": "Holy Cross",
+    "title": "Holy Cross",
+    "lessons": {
+      "first": "Num 21:4b-9",
+      "psalm": "98:1-5 or Psalm 78:1-2, 34-38",
+      "second": "1 Cor 1:18-24",
+      "gospel": "John 3:13-17"
+    }
+  },
+  {
+    "week": "Holy Name of Jesus",
+    "title": "Holy Name of Jesus",
+    "lessons": {
+      "first": "Num 6:22-27",
+      "psalm": "8",
+      "second": "Gal 4:4-7 or Phil 2:5-11",
+      "gospel": "Luke 2:15-21"
+    }
+  },
+  {
+    "week": "Maundy Thursday",
+    "title": "Maundy Thursday",
+    "lessons": {
+      "first": "Exod 12:1-4, (5-10), 11-14",
+      "psalm": "116:1-2, 12-19",
+      "second": "1 Cor 11:23-26",
+      "gospel": "John 13:1-17, 31b-35"
+    }
+  },
+  {
+    "week": "Monday of Holy Week",
+    "title": "Monday of Holy Week",
+    "lessons": {
+      "first": "Isa 42:1-9",
+      "psalm": "36:5-11",
+      "second": "Heb 9:11-15",
+      "gospel": "John 12:1-11"
+    }
+  },
+  {
+    "week": "Presentation of the Lord",
+    "title": "Presentation of the Lord",
+    "lessons": {
+      "first": "Mal 3:1-4",
+      "psalm": "84 or Psalm 24:7-10",
+      "second": "Heb 2:14-18",
+      "gospel": "Luke 2:22-40"
+    }
+  },
+  {
+    "week": "Tuesday of Holy Week",
+    "title": "Tuesday of Holy Week",
+    "lessons": {
+      "first": "Isa 49:1-7",
+      "psalm": "71:1-14",
+      "second": "1 Cor 1:18-31",
+      "gospel": "John 12:20-36"
+    }
+  },
+  {
+    "week": "Visitation of Mary to Elizabeth",
+    "title": "Visitation of Mary to Elizabeth",
+    "lessons": {
+      "first": "1 Sam 2:1-10",
+      "psalm": "113",
+      "second": "Rom 12:9-16b",
+      "gospel": "Luke 1:39-57"
+    }
+  },
+  {
+    "week": "Wednesday of Holy Week",
+    "title": "Wednesday of Holy Week",
+    "lessons": {
+      "first": "Isa 50:4-9a",
+      "psalm": "70",
+      "second": "Heb 12:1-3",
+      "gospel": "John 13:21-32"
+    }
+  }
+]
