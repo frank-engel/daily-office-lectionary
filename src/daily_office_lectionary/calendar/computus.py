@@ -53,6 +53,20 @@ def first_sunday_of_advent(year: int) -> date:
         return nov_30 + timedelta(days=6 - dow)
 
 
+def proper_sundays(easter_year: int) -> list[tuple[int, date]]:
+    """Return [(proper_num, sunday_date), ...] for Proper 1-29.
+
+    BCP 1979 and the Revised Common Lectionary use the identical Proper
+    numbering system, anchored to the Sunday closest to May 11.
+    """
+    may11 = date(easter_year, 5, 11)
+    dow = (may11.weekday() + 1) % 7  # Sun=0, Mon=1, ..., Sat=6
+    prev = may11 - timedelta(days=dow)
+    nxt = prev + timedelta(days=7)
+    p1 = prev if dow <= 3 else nxt
+    return [(n, p1 + timedelta(days=(n - 1) * 7)) for n in range(1, 30)]
+
+
 def liturgical_year_cycle(d: date) -> int:
     """Return 1 (Year One) or 2 (Year Two) for the liturgical year containing *d*.
 

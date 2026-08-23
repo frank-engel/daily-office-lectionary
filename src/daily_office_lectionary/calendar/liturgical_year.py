@@ -5,7 +5,7 @@ week name, day name, and year cycle for Daily Office lectionary lookup.
 
 from datetime import date, timedelta
 
-from .computus import easter_sunday, first_sunday_of_advent
+from .computus import easter_sunday, first_sunday_of_advent, proper_sundays
 
 WEEKDAY_NAMES = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
@@ -35,21 +35,6 @@ def _next_sunday_after(d: date) -> date:
     if days == 0:
         days = 7
     return d + timedelta(days=days)
-
-
-def _sunday_nearest(target: date) -> date:
-    """Sunday closest in date to target (ties go to the previous Sunday)."""
-    dow = (target.weekday() + 1) % 7  # Sun=0, Mon=1, ..., Sat=6
-    prev = target - timedelta(days=dow)
-    nxt = prev + timedelta(days=7)
-    return prev if dow <= 3 else nxt
-
-
-def _proper_sundays(easter_year: int) -> list[tuple[int, date]]:
-    """Return [(proper_num, sunday_date), ...] for Proper 1-29."""
-    may11 = date(easter_year, 5, 11)
-    p1 = _sunday_nearest(may11)
-    return [(n, p1 + timedelta(days=(n - 1) * 7)) for n in range(1, 30)]
 
 
 def liturgical_context(d: date) -> dict | None:
@@ -184,7 +169,7 @@ def liturgical_context(d: date) -> dict | None:
     if d == trinity_eve:
         # Eve readings are evening-only; compute the underlying Proper week so
         # the resolver can fall back to those lessons for Morning Prayer.
-        proper_list = _proper_sundays(easter_year)
+        proper_list = proper_sundays(easter_year)
         morning_week = ""
         for i, (n, sun) in enumerate(proper_list):
             next_sun = proper_list[i + 1][1] if i + 1 < len(proper_list) else date(9999, 1, 1)
@@ -211,7 +196,7 @@ def liturgical_context(d: date) -> dict | None:
         }
 
     # ── SEASON AFTER PENTECOST (Proper N) ─────────────────────────────────
-    proper_list = _proper_sundays(easter_year)
+    proper_list = proper_sundays(easter_year)
     for i, (n, sun) in enumerate(proper_list):
         next_sun = proper_list[i + 1][1] if i + 1 < len(proper_list) else date(9999, 1, 1)
         if sun <= d < next_sun:
