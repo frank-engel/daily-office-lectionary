@@ -26,7 +26,10 @@ def resolve_rcl(d: date, track: int = 2) -> dict | None:
     On Palm Sunday, first_lesson/psalm/second_lesson/gospel carry the
     Liturgy of the Passion (the day's principal readings); the Liturgy of
     the Palms procession Gospel and Psalm are additionally returned under
-    "palms".
+    "palms". Holy Saturday similarly carries its own quiet daytime propers
+    as the primary fields, with the Easter Vigil's epistle/gospel under
+    "vigil"; Easter Day carries the Resurrection propers as primary, with
+    Easter Evening's readings under "evening".
 
     Returned shape::
 
@@ -43,7 +46,9 @@ def resolve_rcl(d: date, track: int = 2) -> dict | None:
             "gospel": str | None,
             "alternate_first_lesson": str | None,
             "alternate_psalm": str | None,
-            "palms": {"gospel": str | None, "psalm": str | None} | None,
+            "palms": {"gospel": ..., "psalm": ...} | None,
+            "vigil": {"second": ..., "psalm": ..., "gospel": ...} | None,
+            "evening": {"first": ..., "psalm": ..., "second": ..., "gospel": ...} | None,
         }
     """
     ctx = rcl_context(d)
@@ -71,6 +76,8 @@ def resolve_rcl(d: date, track: int = 2) -> dict | None:
         "alternate_first_lesson": None,
         "alternate_psalm": None,
         "palms": None,
+        "vigil": None,
+        "evening": None,
     }
 
     if "palms" in lessons and "passion" in lessons:
@@ -95,4 +102,8 @@ def resolve_rcl(d: date, track: int = 2) -> dict | None:
     # Flat shape: a single OT reading, no track split
     result["first_lesson"] = lessons.get("first")
     result["psalm"] = lessons.get("psalm")
+    if "vigil" in lessons:
+        result["vigil"] = dict(lessons["vigil"])
+    if "evening" in lessons:
+        result["evening"] = dict(lessons["evening"])
     return result

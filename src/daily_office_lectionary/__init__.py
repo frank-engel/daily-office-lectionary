@@ -47,7 +47,7 @@ __all__ = [
     "PsalmVerse",
     "Lesson",
     "Verse",
-    "Palms",
+    "Liturgy",
 ]
 
 # The lectionary/collect JSON is ~380 KB total; load it once at import time
@@ -93,11 +93,18 @@ class Lesson:
 
 
 @dataclass
-class Palms:
-    """The Liturgy of the Palms procession Gospel and Psalm, on Palm Sunday."""
+class Liturgy:
+    """A secondary liturgy sharing a date with the primary Sunday/day service.
 
-    gospel: str | None
-    psalm: str | None
+    Used for the Liturgy of the Palms (Palm Sunday), the Easter Vigil (Holy
+    Saturday), and Easter Evening (Easter Day) — each only populates the
+    fields that liturgy actually has.
+    """
+
+    first_lesson: str | None = None
+    psalm: str | None = None
+    second_lesson: str | None = None
+    gospel: str | None = None
 
 
 @dataclass
@@ -116,7 +123,9 @@ class RCLReadings:
     gospel: str | None
     alternate_first_lesson: str | None
     alternate_psalm: str | None
-    palms: Palms | None  # populated only on Palm Sunday
+    palms: Liturgy | None  # populated only on Palm Sunday
+    vigil: Liturgy | None  # populated only on Holy Saturday
+    evening: Liturgy | None  # populated only on Easter Day
     collect: Collect | None
 
 
@@ -276,7 +285,17 @@ def get_rcl_readings(when: _date | str | None = None, track: int = 2) -> RCLRead
         return None
     lit_ctx = liturgical_context(d) or {}
     collect_raw = resolve_collect(d, lit_ctx)
-    palms_raw = result.get("palms")
+
+    def _liturgy(raw: dict | None) -> Liturgy | None:
+        if not raw:
+            return None
+        return Liturgy(
+            first_lesson=raw.get("first"),
+            psalm=raw.get("psalm"),
+            second_lesson=raw.get("second"),
+            gospel=raw.get("gospel"),
+        )
+
     return RCLReadings(
         date=result["date"],
         year=result["year"],
@@ -290,7 +309,9 @@ def get_rcl_readings(when: _date | str | None = None, track: int = 2) -> RCLRead
         gospel=result.get("gospel"),
         alternate_first_lesson=result.get("alternate_first_lesson"),
         alternate_psalm=result.get("alternate_psalm"),
-        palms=Palms(**palms_raw) if palms_raw else None,
+        palms=_liturgy(result.get("palms")),
+        vigil=_liturgy(result.get("vigil")),
+        evening=_liturgy(result.get("evening")),
         collect=Collect(**collect_raw) if collect_raw else None,
     )
 

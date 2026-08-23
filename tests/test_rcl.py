@@ -56,7 +56,7 @@ def test_palm_sunday_embeds_both_liturgies():
     assert result["week"] == "Palm Sunday"
     # Primary fields carry the Liturgy of the Passion.
     assert result["first_lesson"] == "Isa 50:4-9a"
-    assert result["gospel"] == "Matt 26:14-27:66"
+    assert result["gospel"] == "Matt 26:14-27:66 or Matt 27:11-54"
     # The Liturgy of the Palms procession is embedded, not dropped.
     assert result["palms"] == {"gospel": "Matt 21:1-11", "psalm": "118:1-2, 19-29"}
 
@@ -64,7 +64,7 @@ def test_palm_sunday_embeds_both_liturgies():
 def test_fixed_weekday_proper_ash_wednesday():
     result = resolve_rcl(date(2026, 2, 18))
     assert result["week"] == "Ash Wednesday"
-    assert result["first_lesson"] == "Joel 2:1-2, 12-17"
+    assert result["first_lesson"] == "Joel 2:1-2, 12-17 or Isa 58:1-12"
     assert result["gospel"] == "Matt 6:1-6, 16-21"
 
 
@@ -73,12 +73,58 @@ def test_fixed_weekday_proper_same_readings_every_year():
     # fixed-day index is year-independent, so both should resolve.
     ash_2026 = resolve_rcl(date(2026, 2, 18))
     ash_2027 = resolve_rcl(date(2027, 2, 10))
-    assert ash_2026["first_lesson"] == ash_2027["first_lesson"] == "Joel 2:1-2, 12-17"
+    assert (
+        ash_2026["first_lesson"] == ash_2027["first_lesson"] == "Joel 2:1-2, 12-17 or Isa 58:1-12"
+    )
     assert ash_2026["year"] != ash_2027["year"]  # different RCL year, same readings
 
 
 def test_non_sunday_non_fixed_date_returns_none():
     assert resolve_rcl(date(2026, 8, 24)) is None
+
+
+def test_holy_saturday_embeds_the_vigil():
+    result = resolve_rcl(date(2026, 4, 4))
+    assert result["week"] == "Holy Saturday"
+    # Primary fields carry the daytime propers.
+    assert result["first_lesson"] == "Job 14:1-14 or Lam 3:1-9, 19-24"
+    # The Vigil's epistle/psalm/gospel are embedded, not dropped.
+    assert result["vigil"] == {"second": "Rom 6:3-11", "psalm": "114", "gospel": "Matt 28:1-10"}
+
+
+def test_vigil_gospel_varies_by_year_even_though_holy_saturday_does_not():
+    vigil_a = resolve_rcl(date(2026, 4, 4))["vigil"]
+    vigil_b = resolve_rcl(date(2027, 3, 27))["vigil"]
+    vigil_c = resolve_rcl(date(2028, 4, 15))["vigil"]
+    assert vigil_a["gospel"] == "Matt 28:1-10"
+    assert vigil_b["gospel"] == "Mark 16:1-8"
+    assert vigil_c["gospel"] == "Luke 24:1-12"
+
+
+def test_easter_day_embeds_easter_evening():
+    result = resolve_rcl(date(2026, 4, 5))
+    assert result["week"] == "Easter Day"
+    assert result["evening"] == {
+        "first": "Isa 25:6-9",
+        "psalm": "114",
+        "second": "1 Cor 5:6b-8",
+        "gospel": "Luke 24:13-49",
+    }
+
+
+def test_christmas_eve_and_day_are_year_independent():
+    eve = resolve_rcl(date(2025, 12, 24))
+    day = resolve_rcl(date(2025, 12, 25))
+    assert eve["week"] == "Christmas Eve"
+    assert day["week"] == "Christmas Day"
+    assert day["gospel"] == "John 1:1-14"
+
+
+def test_all_saints_day_varies_by_rcl_year():
+    # Unlike the other fixed days, All Saints Day follows its own 3-year
+    # cycle (it's not in fixed_days.json).
+    a = resolve_rcl(date(2028, 11, 1))  # Year C
+    assert a["first_lesson"] == "Dan 7:1-3, 15-18"
 
 
 def test_year_a_year_c_advent_lookups():

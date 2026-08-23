@@ -36,14 +36,20 @@ rcl.gospel  # "Mark 13:24-37"
 `track` selects the Season-after-Pentecost Old Testament reading (Track 1:
 semi-continuous narrative; Track 2: thematically paired with the Gospel —
 the default). The other track's citations are always available as
-`alternate_first_lesson` / `alternate_psalm`, never silently dropped. On
-Palm Sunday, the top-level fields carry the Liturgy of the Passion and the
-procession Gospel/Psalm are under `rcl.palms`.
+`alternate_first_lesson` / `alternate_psalm`, never silently dropped. A few
+dates carry a second liturgy alongside the day's principal readings, exposed
+the same way: Palm Sunday's Liturgy of the Palms procession under
+`rcl.palms`, the Easter Vigil's epistle/gospel under `rcl.vigil` (on Holy
+Saturday), and Easter Evening under `rcl.evening` (on Easter Day).
 
-`get_rcl_readings()` resolves on Sundays plus the fixed weekday propers (Ash
-Wednesday, Maundy Thursday, Good Friday, Holy Saturday, Ascension Day) —
-`None` otherwise. `get_full_readings()` returns both lectionaries plus the
-shared Collect for any date, leaving `.rcl` as `None` when RCL doesn't apply:
+`get_rcl_readings()` resolves on Sundays, the Great Triduum and surrounding
+Holy Week weekdays, and the fixed Feasts and Holy Days that round out the
+calendar (Christmas Eve/Day, Holy Name, Epiphany, the Presentation, the
+Annunciation, the Visitation, Holy Cross, All Saints, Ascension Day, and the
+US/Canadian Thanksgivings) — `None` otherwise. A fixed Holy Day that falls on
+a Sunday yields to the Sunday's own Proper, matching BCP/RCL precedence.
+`get_full_readings()` returns both lectionaries plus the shared Collect for
+any date, leaving `.rcl` as `None` when RCL doesn't apply:
 
 ```python
 from daily_office_lectionary import get_full_readings

@@ -25,14 +25,14 @@ def test_second_sunday_of_advent_2026():
 
 def test_baptism_of_the_lord_2026():
     ctx = rcl_context(date(2026, 1, 11))
-    assert ctx["week"] == "First Sunday after the Epiphany: The Baptism of the Lord"
+    assert ctx["week"] == "Baptism of the Lord"
     assert ctx["season"] == "Epiphany"
 
 
-def test_last_epiphany_2026():
+def test_transfiguration_sunday_2026():
     # Sunday before Ash Wednesday (2026-02-18) is 2026-02-15
     ctx = rcl_context(date(2026, 2, 15))
-    assert ctx["week"] == "Last Sunday after the Epiphany"
+    assert ctx["week"] == "Transfiguration Sunday"
 
 
 def test_ash_wednesday_2026_fixed_weekday():
@@ -97,3 +97,74 @@ def test_three_year_cycle_rotation():
     assert rcl_context(date(2026, 11, 29))["year"] == "B"
     assert rcl_context(date(2027, 11, 28))["year"] == "C"
     assert rcl_context(date(2028, 12, 3))["year"] == "A"
+
+
+# ---------------------------------------------------------------------------
+# Extended fixed-day coverage (Feasts of our Lord + lesser fixed Holy Days)
+# ---------------------------------------------------------------------------
+
+
+def test_christmas_eve_and_day_2025_outrank_weekday():
+    assert rcl_context(date(2025, 12, 24))["week"] == "Christmas Eve"
+    assert rcl_context(date(2025, 12, 25))["week"] == "Christmas Day"
+
+
+def test_holy_name_of_jesus_2026():
+    assert rcl_context(date(2026, 1, 1))["week"] == "Holy Name of Jesus"
+
+
+def test_epiphany_of_the_lord_2026():
+    assert rcl_context(date(2026, 1, 6))["week"] == "Epiphany of the Lord"
+
+
+def test_presentation_of_the_lord_2026():
+    ctx = rcl_context(date(2026, 2, 2))
+    assert ctx == {"year": "A", "week": "Presentation of the Lord", "season": "Epiphany"}
+
+
+def test_annunciation_of_the_lord_2026():
+    ctx = rcl_context(date(2026, 3, 25))
+    assert ctx == {"year": "A", "week": "Annunciation of the Lord", "season": "Lent"}
+
+
+def test_monday_tuesday_wednesday_of_holy_week_2026():
+    assert rcl_context(date(2026, 3, 30))["week"] == "Monday of Holy Week"
+    assert rcl_context(date(2026, 3, 31))["week"] == "Tuesday of Holy Week"
+    assert rcl_context(date(2026, 4, 1))["week"] == "Wednesday of Holy Week"
+
+
+def test_visitation_yields_to_trinity_sunday_when_they_coincide_2026():
+    # 2026-05-31 is both the fixed Feast of the Visitation (May 31) and
+    # Trinity Sunday — the Sunday takes precedence per BCP/RCL rubrics.
+    ctx = rcl_context(date(2026, 5, 31))
+    assert ctx["week"] == "Trinity Sunday"
+
+
+def test_visitation_resolves_on_a_non_sunday_2027():
+    # 2027-05-31 is a Monday, so the fixed feast applies directly.
+    ctx = rcl_context(date(2027, 5, 31))
+    assert ctx == {"year": "B", "week": "Visitation of Mary to Elizabeth", "season": "Pentecost"}
+
+
+def test_holy_cross_2026():
+    ctx = rcl_context(date(2026, 9, 14))
+    assert ctx == {"year": "A", "week": "Holy Cross", "season": "Pentecost"}
+
+
+def test_all_saints_day_yields_to_proper_sunday_when_they_coincide_2026():
+    # 2026-11-01 is both All Saints Day (Nov 1) and Proper 26 — the Sunday
+    # takes precedence.
+    ctx = rcl_context(date(2026, 11, 1))
+    assert ctx["week"] == "Proper 26"
+
+
+def test_thanksgiving_day_us_2026():
+    # 4th Thursday of November, matches Vanderbilt's own listing.
+    ctx = rcl_context(date(2026, 11, 26))
+    assert ctx == {"year": "A", "week": "Thanksgiving Day", "season": "Pentecost"}
+
+
+def test_canadian_thanksgiving_day_2026():
+    # 2nd Monday of October, matches Vanderbilt's own listing.
+    ctx = rcl_context(date(2026, 10, 12))
+    assert ctx == {"year": "A", "week": "Canadian Thanksgiving Day", "season": "Pentecost"}
