@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "daily-office-lectionary"
+version = "0.1.0"
+description = "BCP 1979 Daily Office: readings, psalms, and collects for any date — light by default, with optional full Bible text."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "Frank L Engel", email = "sandcountyfrank@gmail.com" }]
+keywords = ["bcp", "book-of-common-prayer", "lectionary", "daily-office", "liturgy", "episcopal", "anglican"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Religion",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Religion",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["ruff", "pytest", "mypy", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/frank-engel/daily-office-lectionary"
+Issues = "https://github.com/frank-engel/daily-office-lectionary/issues"
+
+[project.scripts]
+daily-office-lectionary = "daily_office_lectionary.__main__:main"
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["src"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/daily_office_lectionary"]
+
+[tool.hatch.build]
+include = [
+    "src/daily_office_lectionary/**/*.py",
+    "src/daily_office_lectionary/data/**/*.json",
+]

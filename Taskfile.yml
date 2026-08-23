@@ -1,0 +1,59 @@
+version: '3'
+
+vars:
+  PY: python
+
+tasks:
+  install:
+    desc: Install the package and dev dependencies in editable mode
+    cmds:
+      - "{{.PY}} -m pip install -e .[dev]"
+
+  lint:
+    desc: Lint with ruff
+    cmds:
+      - ruff check .
+
+  format:
+    desc: Format with ruff
+    cmds:
+      - ruff format .
+
+  format:check:
+    desc: Check formatting without modifying files
+    cmds:
+      - ruff format --check .
+
+  typecheck:
+    desc: Type-check with mypy
+    cmds:
+      - mypy src
+
+  test:
+    desc: Run the test suite
+    cmds:
+      - pytest
+
+  check:
+    desc: Run the full pre-publish gate (lint, format check, typecheck, test)
+    deps: [lint, format:check, typecheck, test]
+
+  fetch-bible:
+    desc: Download the KJVA Bible database into the local cache (needed for full-mode tests)
+    cmds:
+      - "{{.PY}} -m daily_office_lectionary fetch-bible"
+
+  build:
+    desc: Build the sdist and wheel
+    cmds:
+      - "{{.PY}} -m build"
+
+  publish:
+    desc: Upload the built dist/ to PyPI (run `task build` first; requires PyPI credentials)
+    cmds:
+      - "{{.PY}} -m twine upload dist/*"
+
+  clean:
+    desc: Remove build artifacts and caches
+    cmds:
+      - powershell -NoProfile -Command "Remove-Item -Recurse -Force -ErrorAction SilentlyContinue dist,build,.pytest_cache,.ruff_cache,.mypy_cache,*.egg-info"
