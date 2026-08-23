@@ -1,0 +1,44 @@
+[
+  {
+    "week": "First Sunday of Advent",
+    "title": "First Sunday of Advent",
+    "lessons": {
+      "first": "Isa 2:1-5",
+      "psalm": "122",
+      "second": "Rom 13:11-14",
+      "gospel": "Matt 24:36-44"
+    }
+  },
+  {
+    "week": "Palm Sunday",
+    "title": "Sunday of the Passion: Palm Sunday",
+    "lessons": {
+      "palms": {
+        "gospel": "Matt 21:1-11",
+        "psalm": "118:1-2, 19-29"
+      },
+      "passion": {
+        "first": "Isa 50:4-9a",
+        "psalm": "31:9-16",
+        "second": "Phil 2:5-11",
+        "gospel": "Matt 26:14-27:66"
+      }
+    }
+  },
+  {
+    "week": "Proper 16",
+    "title": "Proper 16 (21)",
+    "lessons": {
+      "track1": {
+        "first": "Exod 1:8-2:10",
+        "psalm": "124"
+      },
+      "track2": {
+        "first": "Isa 51:1-6",
+        "psalm": "138"
+      },
+      "second": "Rom 12:1-8",
+      "gospel": "Matt 16:13-20"
+    }
+  }
+]
