@@ -50,6 +50,19 @@ Church first ratified it in 1789 and last certified this edition in 2007 — so
 no attribution is legally required for this text, but its liturgical source is
 documented here for transparency.
 
+## Revised Common Lectionary data (`src/daily_office_lectionary/data/rcl/`)
+
+The Revised Common Lectionary (RCL) is published by the
+[Consultation on Common Texts](https://commontexts.org/). Its scripture
+citations — a list of book/chapter/verse references, not original prose —
+are reference data rather than separately copyrightable text, the same
+reasoning already applied above to the BCP psalm and lesson tables. The
+citations bundled here were cross-checked against
+[Vanderbilt Divinity Library's lectionary database](https://lectionary.library.vanderbilt.edu/),
+whose own tooling/presentation is a separate work from the RCL citations
+themselves; this package reproduces only the citations, not Vanderbilt's
+site content.
+
 ## Bible verse text (full mode only, downloaded on demand)
 
 Full mode resolves scripture verse text from the **King James Version with

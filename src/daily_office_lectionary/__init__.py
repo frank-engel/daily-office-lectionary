@@ -27,26 +27,34 @@ from .collects.loader import load_collects
 from .collects.resolver import resolve_collect
 from .lectionary.loader import load_lectionary
 from .lectionary.resolver import resolve_office
+from .rcl.loader import load_rcl
+from .rcl.resolver import resolve_rcl
 
 __all__ = [
     "get_readings",
     "get_readings_with_text",
+    "get_rcl_readings",
+    "get_full_readings",
     "fetch_bible",
     "is_bible_installed",
     "BibleNotInstalledError",
     "OfficeReadings",
     "OfficeReadingsWithText",
+    "RCLReadings",
+    "FullReadings",
     "Collect",
     "Psalm",
     "PsalmVerse",
     "Lesson",
     "Verse",
+    "Palms",
 ]
 
 # The lectionary/collect JSON is ~380 KB total; load it once at import time
 # rather than requiring callers to remember an explicit startup step.
 load_lectionary()
 load_collects()
+load_rcl()
 
 
 @dataclass
@@ -82,6 +90,44 @@ class Psalm:
 class Lesson:
     reference: str | None
     verses: list[Verse] = field(default_factory=list)
+
+
+@dataclass
+class Palms:
+    """The Liturgy of the Palms procession Gospel and Psalm, on Palm Sunday."""
+
+    gospel: str | None
+    psalm: str | None
+
+
+@dataclass
+class RCLReadings:
+    """Revised Common Lectionary readings for a Sunday (or fixed weekday proper)."""
+
+    date: str
+    year: str  # "A" | "B" | "C"
+    season: str
+    week: str  # "Proper 16", "First Sunday of Advent", "Ash Wednesday", ...
+    title: str | None
+    track: int | None  # None outside the Season after Pentecost
+    first_lesson: str | None
+    psalm: str | None
+    second_lesson: str | None
+    gospel: str | None
+    alternate_first_lesson: str | None
+    alternate_psalm: str | None
+    palms: Palms | None  # populated only on Palm Sunday
+    collect: Collect | None
+
+
+@dataclass
+class FullReadings:
+    """The BCP 1979 Daily Office and RCL readings for one date, with the shared Collect."""
+
+    date: str
+    office: OfficeReadings | None
+    rcl: RCLReadings | None
+    collect: Collect | None
 
 
 @dataclass
@@ -205,3 +251,65 @@ def get_readings_with_text(
         evening_lessons=_expand_lessons(light.evening_lessons),
         collect=light.collect,
     )
+
+
+def get_rcl_readings(when: _date | str | None = None, track: int = 2) -> RCLReadings | None:
+    """
+    Return the Revised Common Lectionary readings for *when* (default: today).
+
+    *track* selects which Season-after-Pentecost Old Testament reading is
+    primary (Track 1: semi-continuous narrative; Track 2: thematically
+    paired with the Gospel — the default, matching common Rite II practice).
+    The non-selected track's citations are always included as
+    alternate_first_lesson/alternate_psalm, never silently dropped.
+
+    On Palm Sunday, the top-level fields carry the Liturgy of the Passion
+    (the day's principal readings); the Liturgy of the Palms procession
+    Gospel and Psalm are returned separately under .palms.
+
+    Returns None if *when* is not a Sunday or one of the fixed RCL weekday
+    propers (Ash Wednesday, the Triduum, Ascension Day).
+    """
+    d = _coerce_date(when)
+    result = resolve_rcl(d, track=track)
+    if result is None:
+        return None
+    lit_ctx = liturgical_context(d) or {}
+    collect_raw = resolve_collect(d, lit_ctx)
+    palms_raw = result.get("palms")
+    return RCLReadings(
+        date=result["date"],
+        year=result["year"],
+        season=result["season"],
+        week=result["week"],
+        title=result.get("title"),
+        track=result.get("track"),
+        first_lesson=result.get("first_lesson"),
+        psalm=result.get("psalm"),
+        second_lesson=result.get("second_lesson"),
+        gospel=result.get("gospel"),
+        alternate_first_lesson=result.get("alternate_first_lesson"),
+        alternate_psalm=result.get("alternate_psalm"),
+        palms=Palms(**palms_raw) if palms_raw else None,
+        collect=Collect(**collect_raw) if collect_raw else None,
+    )
+
+
+def get_full_readings(when: _date | str | None = None, track: int = 2) -> FullReadings:
+    """
+    Return both the BCP 1979 Daily Office and RCL readings for *when* (any
+    date — default: today), plus the shared Collect of the Day.
+
+    .office is populated whenever the Daily Office resolver has an entry for
+    the date (nearly always). .rcl is populated only when the date is a
+    Sunday or a fixed RCL weekday proper; it's None on other dates, so
+    callers never need to know in advance whether RCL applies. .collect is
+    taken from whichever of the two resolved one — both are derived from
+    the same underlying Collect resolution, so they agree when both are
+    present.
+    """
+    d = _coerce_date(when)
+    office = get_readings(d)
+    rcl = get_rcl_readings(d, track=track)
+    collect = (office.collect if office else None) or (rcl.collect if rcl else None)
+    return FullReadings(date=d.isoformat(), office=office, rcl=rcl, collect=collect)
